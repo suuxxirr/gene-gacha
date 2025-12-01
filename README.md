@@ -14,7 +14,7 @@
   <p align="center">
     캐릭터 유전 터미널 게임
     <br />
-    <a href="https://github.com/suuxxirr/gene-gacha"><strong>코드 구경하기 »</strong></a>
+    <a href="https://github.com/suuxxirr/gene-gacha/blob/main/game_play.py"><strong>코드 구경하기 »</strong></a>
     <br />
   </p>
 </div>
