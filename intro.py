@@ -42,10 +42,12 @@ def show_intro():
         
 def game_description():
     print(data.divider)
-    print("게임 설명 작성 예정")
+    print("게임 설명 작성 예정!!!!!")
+    print("임시설명:")
     print("소개팅을 통해 귀여운 캐릭터와 결혼하고 자손을 낳아보세요")
     print("캐릭터의 외모가 예쁠수록 청혼 성공 확률이 높아집니다")
     print("청혼에 성공하면 부모의 외모 특성을 물려받은 자손을 얻을 수 있습니다람쥐")
+    print("소개팅에 실패하면 게임오버")
     print("\n")
     choice = input("번호를 입력해주세요 => ")
 

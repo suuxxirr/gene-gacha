@@ -71,7 +71,7 @@ def date(player, my_family):
         print()
         space = len(fiancee.face) + 9
         print(" " * space + data.speech_ballon_upper)
-        print(" " * (space + 4) + "Will you marry me?")
+        print(" " * (space + 2) + "Will you marry me?")
         print(" " * space + data.speech_ballon_down)
         time.sleep(1)
 

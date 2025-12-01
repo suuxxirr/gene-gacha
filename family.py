@@ -28,7 +28,7 @@ class Family:
             elif index % 2 == 0: # 짝수
                 print(member.face)
                 if index < len(self.family_list):
-                    space = face_len + 11
+                    space = face_len + 10
                     for i in range(6):
                         print(" " * space + "*")
         

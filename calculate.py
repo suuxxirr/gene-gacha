@@ -8,7 +8,7 @@ def calculate_marriage(player, fiancee):
     beauty_differ = player.beauty - fiancee.beauty
 
     # 확률 계산
-    if beauty_differ >= 20: # player가 20 이상으로 더 예쁠경우
+    if beauty_differ >= 10: # player가 10 이상으로 더 예쁠경우
         beauty_differ -= beauty_differ * 0.5 # 확률 높이기
     # if beauty_differ <= -20: # plaeyer가 20 이상으로 더 안 예쁠경우
         # beauty_differ += beauty_differ * 0.5 # 확률 낮추기
