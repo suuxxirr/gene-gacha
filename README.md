@@ -5,7 +5,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/github_username/repo_name">
+  <a href="https://github.com/suuxxirr/gene-gacha">
     <img src="images/genegacha_logo.png" alt="Logo" width="380" height="280">
   </a>
 
@@ -14,7 +14,7 @@
   <p align="center">
     캐릭터 유전 터미널 게임
     <br />
-    <a href="https://github.com/github_suuxxirr/gene-gacha"><strong>코드 구경하기 »</strong></a>
+    <a href="https://github.com/suuxxirr/gene-gacha"><strong>코드 구경하기 »</strong></a>
     <br />
   </p>
 </div>
