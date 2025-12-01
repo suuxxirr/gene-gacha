@@ -19,9 +19,10 @@ def make_descendant(player, fiancee, my_family):
         descendant = character.Character(descendant_gene[0], descendant_gene[1], descendant_gene[2], descendant_gene[3])
         descendant.set_face()
         descendant.calculate_beauty()
-        my_family.add_family(descendant)
 
-        if descendant.face != player.face and descendant.face != fiancee.face: break # 부모의 얼굴과 100% 동일 방지
+        if descendant.face != player.face and descendant.face != fiancee.face: # 부모의 얼굴과 100% 동일 방지
+            my_family.add_family(descendant)
+            break 
 
     print(f'[{player.name}](이)와 [{fiancee.name}]의 자손이 태어났습니다')
     print(data.divider)
