@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import data, game_play, calculate, descendant
 import time
 
@@ -70,7 +71,7 @@ def date(player, my_family):
         print()
         space = len(fiancee.face) + 9
         print(" " * space + data.speech_ballon_upper)
-        print(" " * (space + 1) + "𝑊 𝑖𝑙𝑙 𝑦𝑜𝑢 𝑚 𝑎𝑟𝑟𝑦 𝑚 𝑒?")
+        print(" " * (space + 4) + "Will you marry me?")
         print(" " * space + data.speech_ballon_down)
         time.sleep(1)
 

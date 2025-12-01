@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import data
 import time
 
@@ -27,7 +28,7 @@ class Family:
             elif index % 2 == 0: # 짝수
                 print(member.face)
                 if index < len(self.family_list):
-                    space = face_len + 8
+                    space = face_len + 11
                     for i in range(6):
                         print(" " * space + "*")
         

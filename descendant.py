@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import data, calculate, character
 import time
 
@@ -5,9 +6,9 @@ def make_descendant(player, fiancee, my_family):
     print(data.divider)
     print(f'[{player.name}](이)와 [{fiancee.name}](은)는 행복합니다!')
     print()
-    print(fiancee.face + "    ♥ ♡ ♥ ♡ ♥ ♡    " + player.face)
+    print(fiancee.face + "    ♥ ♥ ♥     " + player.face)
 
-    text = "\n\n♥ ♡ ♥\n\n"
+    text = "\n\n♥ ♥ ♥\n\n"
     for ch in text:
         print(ch, end="", flush = True)
         time.sleep(2)

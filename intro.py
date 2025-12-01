@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import data, sys, game_play
 import time
 

@@ -1,5 +1,6 @@
+# -*- coding: utf-8 -*-
 import intro, data, item, character, family, date
-import random, time, sys
+import random, time, sys, os, locale
 
 # my 캐릭터 생성 
 def character_born(family_name):
@@ -110,6 +111,8 @@ def game_over(my_family):
           """)
     time.sleep(5)
     print(data.divider)
+    print("10초 뒤 창이 종료됩니다")
+    time.sleep(10)
     sys.exit()
 
 
@@ -120,11 +123,40 @@ def set_family_name():
     return family_name
 
 
+def setup_console():
+    # 현재 인코딩 확인
+    current_encoding = sys.stdout.encoding or locale.getpreferredencoding(False)
+
+    if os.name == "nt":
+        try:
+            # 명령 프롬프트 코드 페이지 UTF-8로 변경
+            os.system("chcp 65001 >NUL")
+        except Exception:
+            pass
+
+        try:
+            import ctypes
+            kernel32 = ctypes.windll.kernel32
+            # 출력, 입력 코드 페이지를 UTF-8로 설정
+            kernel32.SetConsoleOutputCP(65001)
+            kernel32.SetConsoleCP(65001)
+        except Exception:
+            pass
+
+    # 파이썬 표준 입출력 인코딩 재설정 
+    try:
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+        sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        # 파이썬 3.7 미만이거나 reconfigure 미지원 환경인 경우
+        pass
+
 
 # =====================================================
 
 # 메인 
 if __name__ == "__main__":
+    setup_console()
     intro.show_intro()
 
     print(data.divider)
