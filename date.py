@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import data, game_play, calculate, descendant
+import data, game_play, calculate, descendant, input_validation as iv
 import time
 
 # 소개팅 
@@ -30,27 +30,40 @@ def date(player, my_family):
     reject_check =[False, False, False] # 거절 체크 
 
     # 청혼 
+    first = True
     while True:
         # 전부 거절 체크
         if(all(reject_check)):
             game_play.game_over(my_family)
 
         # 파트너 출력 
-        for idx, partner in enumerate(partners, start=1):
-            print(f'{idx}.')
-            print()
-            print(partner.face)
-            time.sleep(1)
-            print()
-            print(data.speech_ballon_upper)
-            print(f' 안녕! 나는 {partner.name}(이)야')
-            print(data.speech_ballon_down)
-            print()
-            time.sleep(2)
+        if first:
+            for idx, partner in enumerate(partners, start=1):
+                print(f'{idx}.')
+                print()
+                print(partner.face)
+                time.sleep(1)
+                print()
+                print(data.speech_ballon_upper)
+                print(f' 안녕! 나는 {partner.name}(이)야')
+                print(data.speech_ballon_down)
+                print()
+                time.sleep(2)
+                first = False
+        else: # 두번째부터는 바로 나오게 설정 
+            for idx, partner in enumerate(partners, start=1):
+                print(f'{idx}.')
+                print()
+                print(partner.face)
+                print()
+                print(data.speech_ballon_upper)
+                print(f' 안녕! 나는 {partner.name}(이)야')
+                print(data.speech_ballon_down)
+                print()
 
 
         print(data.divider)
-        choice = int(input("청혼할 상대를 골라주세요 (1/2/3) => "))
+        choice = iv.input_menu_123("청혼할 상대를 골라주세요 (1/2/3) => ")
         if reject_check[choice-1]: #이미 거절함
             print()
             print(f'! [{partners[choice-1].name}]에게 다시 청혼할 수 없습니다')
@@ -92,6 +105,7 @@ def date(player, my_family):
             print()
             time.sleep(2)
             print('다른 상대에게 다시 청혼해주세요\n')
+            time.sleep(1)
 
     my_family.add_family(fiancee) # 가계도에 추가
 

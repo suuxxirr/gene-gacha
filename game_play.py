@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import intro, data, item, character, family, date
+import intro, data, item, character, family, date, input_validation as iv
 import random, time, sys, os, locale
 
 # my 캐릭터 생성 
@@ -30,10 +30,11 @@ def character_born(family_name):
 
     print("♥ 캐릭터가 태어났어요 ♥\n")
     time.sleep(2)
-    print("-----------------\n")
+    # 출력
+    print("─────────────────\n")
     print("  " + player.face)
-    print("\n-----------------\n")
-    name = input("이름을 정해주세요 => ")
+    print("\n─────────────────\n")
+    name = iv.input_text("이름을 정해주세요 => ", 1, 15)
     player.set_name(name)
 
     time.sleep(2)
@@ -53,7 +54,7 @@ def menu():
         print("2. 가계도 보기")
         print()
 
-        choice = int(input("번호를 입력해주세요 => "))
+        choice = iv.input_menu_12("번호를 입력해주세요 => ")
         if choice == 1:
             return date.date(player, my_family) # 소개팅 하기
         elif choice == 2:
@@ -111,14 +112,13 @@ def game_over(my_family):
           """)
     time.sleep(5)
     print(data.divider)
-    print("10초 뒤 창이 종료됩니다")
-    time.sleep(10)
+    time.sleep(3)
     sys.exit()
 
 
 # 가문명 정하기
 def set_family_name():
-    family_name = input("가문명을 정해주세요 => ")
+    family_name = iv.input_text("가문명을 정해주세요 => ", 1, 20)
     print(f"가문명 [{family_name}](을)를 부여받았습니다!")
     return family_name
 

@@ -4,19 +4,21 @@ import random
 
 # 청혼 승낙 여부 계산
 def calculate_marriage(player, fiancee):
+    
+    accept_probability =  player.beauty / (player.beauty + fiancee.beauty)
+    r = random.random() # 0 이상 1 미만의 난수 생성
+    return r < accept_probability
 
+    '''
     beauty_differ = player.beauty - fiancee.beauty
-
-    # 확률 계산
     if beauty_differ >= 10: # player가 10 이상으로 더 예쁠경우
         beauty_differ -= beauty_differ * 0.5 # 확률 높이기
-    # if beauty_differ <= -20: # plaeyer가 20 이상으로 더 안 예쁠경우
-        # beauty_differ += beauty_differ * 0.5 # 확률 낮추기
 
     accept_probability = 1 - (30 - beauty_differ) / 100
 
     r = random.random() # 0 이상 1 미만의 난수 생성
     return r < beauty_differ
+    '''
 
 
 

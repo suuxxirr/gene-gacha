@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import data, calculate, character
+import data, calculate, character, input_validation as iv
 import time
 
 def make_descendant(player, fiancee, my_family):
@@ -11,7 +11,7 @@ def make_descendant(player, fiancee, my_family):
     text = "\n\n♥ ♥ ♥\n\n"
     for ch in text:
         print(ch, end="", flush = True)
-        time.sleep(2)
+        time.sleep(1)
     print()
     
     # 후손 생성
@@ -29,10 +29,10 @@ def make_descendant(player, fiancee, my_family):
     print(data.divider)
 
     time.sleep(5)
-    print("-----------------\n")
+    print("─────────────────\n")
     print("  " + descendant.face)
-    print("\n-----------------\n")
-    name = input("이름을 정해주세요 => ")
+    print("\n─────────────────\n")
+    name = iv.input_text("이름을 정해주세요 => ", 1, 10)
     descendant.set_name(name)
 
     time.sleep(2)
